@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>notes</title>
+    <link>https://njseeto.github.io/</link>
+    <description>Recent content on notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <copyright>©</copyright>
+    <lastBuildDate>Wed, 30 Oct 2019 12:13:30 +0530</lastBuildDate>
+    
+	<atom:link href="https://njseeto.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>At the Intersection of Empathy and Technology</title>
+      <link>https://njseeto.github.io/posts/2019-10-29-at-the-intersection-of-empathy-and-technology/</link>
+      <pubDate>Wed, 30 Oct 2019 12:13:30 +0530</pubDate>
+      
+      <guid>https://njseeto.github.io/posts/2019-10-29-at-the-intersection-of-empathy-and-technology/</guid>
+      <description>Warning: This article contains references to emotions and feelings 😊 Having an open conversation about mental health can be difficult to initiate. The invisible nature of mental health obscures our ability to determine whether someone is actually struggling. It either goes unnoticed or feels too awkward a topic to bring up.
+While working as a clinician in children&amp;rsquo;s hospitals, I found myself in a number of hard discussions with families in distress.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://njseeto.github.io/about/</link>
+      <pubDate>Sat, 26 Oct 2019 21:37:58 +0530</pubDate>
+      
+      <guid>https://njseeto.github.io/about/</guid>
+      <description>I am a generalist software developer with a keen interest in health tech1, security, XP, continuous development and mentoring.
+Me in the form of a timeline  Graduated from The University of Sydney and started working at The Children&amp;rsquo;s Hospital Westmead.
+ Moved to Melbourne for a job at the Royal Children&amp;rsquo;s Hospital, Melbourne.
+Travelled around for a year and made a documentary. Learnt how to tie a bowline amongst other things.</description>
+    </item>
+    
+    <item>
+      <title>Not another blog</title>
+      <link>https://njseeto.github.io/posts/2019-10-26-not-another-blog/</link>
+      <pubDate>Sat, 26 Oct 2019 12:13:32 +0530</pubDate>
+      
+      <guid>https://njseeto.github.io/posts/2019-10-26-not-another-blog/</guid>
+      <description>What is this? A blog. Yes another blog.
+It&amp;rsquo;s a place that I do not expect many people to deliberately seek out, stumble upon sure but not stay for long. The reason for this blog is a purely selfish one. This is a place to keep my musings and an easy way to direct people (mainly myself) to information.
+
+What can you expect? To be perfectly honest - fairly irregular blog posts.</description>
+    </item>
+    
+  </channel>
+</rss>
