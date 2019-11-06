@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <copyright>©</copyright>
-    <lastBuildDate>Wed, 30 Oct 2019 12:13:30 +0530</lastBuildDate>
+    <lastBuildDate>Sun, 03 Nov 2019 12:13:32 +0530</lastBuildDate>
     
 	<atom:link href="https://njseeto.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>musings</title>
+      <link>https://njseeto.github.io/tags/musings/</link>
+      <pubDate>Sun, 03 Nov 2019 12:13:32 +0530</pubDate>
+      
+      <guid>https://njseeto.github.io/tags/musings/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>anxietyTech</title>
@@ -45,15 +54,6 @@
       <pubDate>Wed, 30 Oct 2019 12:13:30 +0530</pubDate>
       
       <guid>https://njseeto.github.io/tags/mental-health/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>musings</title>
-      <link>https://njseeto.github.io/tags/musings/</link>
-      <pubDate>Sat, 26 Oct 2019 12:13:32 +0530</pubDate>
-      
-      <guid>https://njseeto.github.io/tags/musings/</guid>
       <description></description>
     </item>
     

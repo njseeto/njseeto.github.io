@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <copyright>©</copyright>
-    <lastBuildDate>Wed, 30 Oct 2019 12:13:30 +0530</lastBuildDate>
+    <lastBuildDate>Sun, 03 Nov 2019 12:13:32 +0530</lastBuildDate>
     
 	<atom:link href="https://njseeto.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Notes: 27th Oct - 2nd Nov</title>
+      <link>https://njseeto.github.io/posts/2019-11-03-notes/</link>
+      <pubDate>Sun, 03 Nov 2019 12:13:32 +0530</pubDate>
+      
+      <guid>https://njseeto.github.io/posts/2019-11-03-notes/</guid>
+      <description>TL, DR; Work things:  AWS Solutions Architect Certification study continues → databases are my weakness Encryption at rest: Research into encrypting data in S3 buckets and ran into the issues with preserving the &amp;lsquo;last modified date&amp;rsquo; metadata when running  aws s3 cp s3://encrypted-bucket s3://encrypted-bucket --recursive --sse (any insight into this would be greatly appreciated).
+ Completed stories to protect our application from XSS (reflected and stored). Carried on building a SSH monitoring application in Python.</description>
+    </item>
     
     <item>
       <title>At the Intersection of Empathy and Technology</title>
