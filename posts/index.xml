@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <copyright>©</copyright>
-    <lastBuildDate>Sun, 17 Nov 2019 12:13:32 +0530</lastBuildDate>
+    <lastBuildDate>Mon, 25 Nov 2019 12:13:32 +0530</lastBuildDate>
     
 	<atom:link href="https://njseeto.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Notes: 17th Nov - 24th Nov</title>
+      <link>https://njseeto.github.io/posts/2019-11-24-notes/</link>
+      <pubDate>Mon, 25 Nov 2019 12:13:32 +0530</pubDate>
+      
+      <guid>https://njseeto.github.io/posts/2019-11-24-notes/</guid>
+      <description>TL, DR; Work things:  Finished a feature that adds specific information at the point of object creation, rather than enriching the object later on in the pipeline. Sprint planning → we are looking at splitting a monolithic application across two teams. Server response times in US were super slow → Caching the slow to build data solved this. Continued AWS learning → EC2, security groups and Elastic Block Storage (EBS).</description>
+    </item>
     
     <item>
       <title>Notes: 3rd Nov - 16th Nov</title>
@@ -18,7 +27,7 @@
       <pubDate>Sun, 17 Nov 2019 12:13:32 +0530</pubDate>
       
       <guid>https://njseeto.github.io/posts/2019-11-17-notes/</guid>
-      <description>TL, DR;  This article will cover a fortnights&amp;rsquo; worth of musings (nothing about work, all about my holiday). Australia is pretty darn great. Discovered some new fun places in Sydney &amp;ndash;&amp;gt; White Rabbit Gallery and Sappho Books. Channeled Thelma &amp;amp; Louise and drove the Great Ocean Road with a friend. Detoured from the Great Ocean Road and did a few hikes in the Grampians. Hikes included Mt Abrupt - Mud Dadjug, Lake Elizabeth and Griffiths Island.</description>
+      <description>TL, DR;  This article will cover a fortnights&amp;rsquo; worth of musings (nothing about work, all about my holiday). Australia is pretty darn great. Discovered some new fun places in Sydney → White Rabbit Gallery and Sappho Books. Channeled Thelma &amp;amp; Louise and drove the Great Ocean Road with a friend. Detoured from the Great Ocean Road and did a few hikes in the Grampians. Hikes included Mt Abrupt - Mud Dadjug, Lake Elizabeth and Griffiths Island.</description>
     </item>
     
     <item>
@@ -27,8 +36,8 @@
       <pubDate>Sun, 03 Nov 2019 12:13:32 +0530</pubDate>
       
       <guid>https://njseeto.github.io/posts/2019-11-03-notes/</guid>
-      <description>TL, DR; Work things:  AWS Solutions Architect Certification study continues → databases are my weakness Encryption at rest: Research into encrypting data in S3 buckets and ran into the issues with preserving the &amp;lsquo;last modified date&amp;rsquo; metadata when running  aws s3 cp s3://encrypted-bucket s3://encrypted-bucket --recursive --sse (any insight into this would be greatly appreciated).
- Completed stories to protect our application from XSS (reflected and stored). Carried on building a SSH monitoring application in Python.</description>
+      <description>TL, DR; Work things:  AWS Solutions Architect Certification study continues → databases are my weakness Encryption at rest: Research into encrypting data in S3 buckets and ran into the issues with preserving the &amp;lsquo;last modified date&amp;rsquo; metadata when running   aws s3 cp s3://encrypted-bucket s3://encrypted-bucket --recursive --sse  (any insight into this would be greatly appreciated).
+ Completed stories to protect our application from XSS (reflected and stored).</description>
     </item>
     
     <item>
