@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <copyright>©</copyright>
-    <lastBuildDate>Mon, 25 Nov 2019 12:13:32 +0530</lastBuildDate>
+    <lastBuildDate>Sun, 01 Dec 2019 12:13:32 +0530</lastBuildDate>
     
 	<atom:link href="https://njseeto.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Notes: 25th Nov - 1st Dec</title>
+      <link>https://njseeto.github.io/posts/2019-12-01-notes/</link>
+      <pubDate>Sun, 01 Dec 2019 12:13:32 +0530</pubDate>
+      
+      <guid>https://njseeto.github.io/posts/2019-12-01-notes/</guid>
+      <description>TL, DR; Work things:  The Future of CyberSecurity conference → I&amp;rsquo;ll write up a quick overview of the conference when I get time. Watched Mastering Chaos - A Netflix Guide to Microservices Played around with Cloudcraft Held an event at work involving high school students and the Mayor&amp;rsquo;s Fund for London Decommissioned an application that is no longer used. It&amp;rsquo;s super satisfying deleting code. Discussed the best practice for acccessing data from a database.</description>
+    </item>
     
     <item>
       <title>Notes: 17th Nov - 24th Nov</title>
