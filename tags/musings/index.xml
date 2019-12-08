@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <copyright>©</copyright>
-    <lastBuildDate>Sun, 01 Dec 2019 12:13:32 +0530</lastBuildDate>
+    <lastBuildDate>Sun, 08 Dec 2019 12:13:32 +0530</lastBuildDate>
     
 	<atom:link href="https://njseeto.github.io/tags/musings/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Notes: 2nd Dec - 8th Dec</title>
+      <link>https://njseeto.github.io/posts/2019-12-08-notes/</link>
+      <pubDate>Sun, 08 Dec 2019 12:13:32 +0530</pubDate>
+      
+      <guid>https://njseeto.github.io/posts/2019-12-08-notes/</guid>
+      <description>TL, DR;  Work: Spies, branches and an incident. Life: Housemates, algorithms and kindness.  Work things:  Final week of compliance work (hopefully). Using Mockito Spies at work to help partially mock methods on a class. Branch based vs Trunk based development. I want to dedicate a bit more space for this discussion, but I wanted to highlight the difficulty of chasing someone down to review changes. We primarily work in a trunk-based manner (which I thoroughly enjoy) but for this particulary story I have been working on, the team decided to go with a branch based style and to have one developer working on the story.</description>
+    </item>
     
     <item>
       <title>Notes: 25th Nov - 1st Dec</title>
