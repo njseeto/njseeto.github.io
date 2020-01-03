@@ -7,20 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <copyright>©</copyright>
-    <lastBuildDate>Tue, 17 Dec 2019 12:13:30 +0530</lastBuildDate>
+    <lastBuildDate>Fri, 03 Jan 2020 12:13:30 +0530</lastBuildDate>
     
 	<atom:link href="https://njseeto.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Notes: 16th Dec - 5th Jan</title>
+      <title>Notes: 16th Dec - 3rd Jan</title>
       <link>https://njseeto.github.io/posts/2019-12-22-note/</link>
-      <pubDate>Tue, 17 Dec 2019 12:13:30 +0530</pubDate>
+      <pubDate>Fri, 03 Jan 2020 12:13:30 +0530</pubDate>
       
       <guid>https://njseeto.github.io/posts/2019-12-22-note/</guid>
       <description>TL, DR; Super delayed week notes!
- Christmas in Riga Identity functions are cool Challenge assumptions  Work things:  Story challenged. Assumptions here were challenged, a team wanted us to implement some metrics that wouldn&amp;rsquo;t make sense. More on this later on. I was looking through a section of Java 8 in Action book about streams and discovered you can use methods at the point of instantiation.
-public Supplier&amp;lt;Map&amp;lt;Boolean, List&amp;lt;Integer&amp;gt;&amp;gt;&amp;gt; supplier() { return () -&amp;gt; new HashMap&amp;lt;Boolean, List&amp;lt;Integer&amp;gt;&amp;gt;() {{ put(true, new ArrayList&amp;lt;Integer&amp;gt;()); put(false, new ArrayList&amp;lt;Integer&amp;gt;()); }}; } In this example, a Map is created with two empty lists, one with the key of true and another with the key of false - cool huh</description>
+ Christmas in Riga Identity functions are cool Challenge assumptions Happy New Year!  Work things:  Story challenged. Assumptions here were challenged, a team wanted us to implement some metrics that wouldn&amp;rsquo;t make sense. More on this later on. I was looking through a section of Java 8 in Action book about streams and discovered you can use methods at the point of instantiation.</description>
     </item>
     
     <item>
