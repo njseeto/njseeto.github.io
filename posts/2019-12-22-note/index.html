@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Notes: 16th Dec - 5th Jan | seeto </title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Notes: 16th Dec - 5th Jan" />
+<meta property="og:description" content="Challenge Assumptions" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://njseeto.github.io/posts/2019-12-22-note/" />
+<meta property="article:published_time" content="2019-12-17T12:13:30+05:30" />
+<meta property="article:modified_time" content="2019-12-17T12:13:30+05:30" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Notes: 16th Dec - 5th Jan"/>
+<meta name="twitter:description" content="Challenge Assumptions"/>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" media="screen" href="https://njseeto.github.io/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://njseeto.github.io/css/main.css" /><link rel="stylesheet" type="text/css" href="https://njseeto.github.io/css/dark.css" media="(prefers-color-scheme: dark)" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://njseeto.github.io/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="/">notes</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/njseeto" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/natalieseeto" title="Twitter"><i data-feather="twitter"></i></a><a href="https://linkedin.com/in/natalie-seeto/" title="Linkedin"><i data-feather="linkedin"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">Posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">Notes: 16th Dec - 5th Jan</h1>
+			<div class="meta">Posted at &mdash; Dec 17, 2019</div>
+		</div>
+
+		<div class="markdown">
+			
+
+<h3 id="tl-dr">TL, DR;</h3>
+
+<p>Super delayed week notes!</p>
+
+<ul>
+<li>Christmas in Riga</li>
+<li>Identity functions are cool</li>
+<li>Challenge assumptions</li>
+</ul>
+
+<h4 id="work-things">Work things:</h4>
+
+<ul>
+<li>Story challenged. Assumptions here were challenged, a team wanted us to implement some metrics that wouldn&rsquo;t make sense. More on this later on.</li>
+
+<li><p>I was looking through a section of <a href="https://www.oreilly.com/library/view/java-8-in/9781617291999/">Java 8 in Action</a> book about streams and discovered you can use methods at the point of instantiation.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">public Supplier&lt;Map&lt;Boolean, List&lt;Integer&gt;&gt;&gt; supplier() {    
+    return () -&gt; new HashMap&lt;Boolean, List&lt;Integer&gt;&gt;() {{       
+        put(true, new ArrayList&lt;Integer&gt;());        
+        put(false, new ArrayList&lt;Integer&gt;());    
+    }};
+}</pre></div></li>
+
+<li><p>In this example, <strong>a Map is created with two empty lists</strong>, one with the key of true and another with the key of false - cool huh</p></li>
+
+<li><p>I also ran into this thing called an <strong>identity function</strong>. This is a function that takes an argument and always returns it’s own input argument.</p></li>
+
+<li><p>Got a little further in my AWS Certified Solutions Architect study!</p></li>
+</ul>
+
+<h4 id="general-life-things">General life things:</h4>
+
+<ul>
+<li>Spent Christmas in Riga, learnt so much about the history of Latvia and indulged in a fantastic Latvian bath house day (would highly recommend a visit)</li>
+<li>Thinking about the devastation of the bushfires back home and hoping all in Australia are staying safe.</li>
+</ul>
+
+<hr />
+
+<h3 id="message-of-the-week">Message of the week</h3>
+
+<p>Challenge Assumptions!</p>
+
+<p>Story challenged - I&rsquo;m going to use an example to highlight this and the reason for story push back&hellip;</p>
+
+<p>Imagine we have a baker who bakes different varieties of cookies (chocolate chip, oat, white choc etc). The baker will only get paid if the customer eats the whole cookie! Harsh I know. So depending on factors like the time of day, whether the customer is new or a regular, customer appetite etc the likelihood of the customer eating the cookie will change.</p>
+
+<p>The good thing here is any cookie that is half eaten / not sold will be eaten by the cookie monster - so no cookie is wasted. Note the cookie monster doesn&rsquo;t pay for the cookies, it&rsquo;s their job to eat the cookies afterall (someone&rsquo;s gotta do it). The cookie monster LOVES cookies so they will roam around the store eating discarded cookies at their own free will.</p>
+
+<p>We have a fancy new cookie psychic who greets the customers and can determine with excellent accuracy whether the customer will finish the cookie, thus maximising our cookies&rsquo; money making potential. The cookie psychic will politely redirect customers to the other cookie store down the road if they believe they will not finish a cookie.</p>
+
+<p>The story we were asked to implement essentially wanted us to measure the amount of cookies that were saved from being half eaten.</p>
+
+<p>We had to challenge this story because <strong>all cookies will be eaten</strong>! There was an assumption that the half eaten and unsold cookies were just thrown away and unaccounted for. So now we are re-working the story to determine the best way to measure the amount of half eaten/unsold cookies.</p>
+
+<p>Note: There are other complications in the story, the above scenario gives you an idea of assumptions made at a high level.</p>
+
+<p>This push back will definitely result in a more optimised way to get this information - I learnt (was reminded of) the importance of challenging assumptions.</p>
+
+<h3 id="who-taught-me-something-or-really-made-me-think-this-week">Who taught me something or really made me think this week?</h3>
+
+<p>I went to a Latvian Bathhouse for 7hrs (yes decadent). Think sauna, massage, spa, herbal tea, a fireplace and robes. I&rsquo;ve always been terrible with stopping and taking time to relax but after this experience have realised the importance of it.
+In the same vein, despite having a few options for nye (drinks, dinners, parties) - I decided to stay in, have a bath and read a book. It was the first time in my adult life where I&rsquo;ve not gone out for nye and it was magnificent.</p>
+
+<p>Having this down time has made me realise the importance of self care.</p>
+
+<h3 id="what-am-i-trying-to-work-out">What am I trying to work out?</h3>
+
+<p>I have been working on a story for a while - this particular story touches 5 different projects (yes there has to be a better way to organise these projects). Also we had a week of testing, and then the festive season happened which tends to mean slow to no progress.</p>
+
+<p>After the week of testing the results that came back were not what we thought, and it was because some changes hadn&rsquo;t been completed in another project - a project that I have very little/no experience with. Keen to take on the challenge of learning about a new project I asked to pair and over the last week have been trying to work out the ins and ours of this project.</p>
+
+<p>A few things:</p>
+
+<ul>
+<li>The version of ChromeDriver does not work with running the acceptance tests locally so we need to upgrade it to the latest. However, with the version bump Docker cannot deploy it.</li>
+<li>It&rsquo;s been quite enjoyable working with yarn and npm again.</li>
+<li>Configuring tests and debugging for individual test files has been a learning curve!</li>
+<li>The project had URLs that have since changed</li>
+<li>I have been able to successfully build and run tests remotely! (I feel like this should be something that is super easy, but in this instance was a bit of a challenge)</li>
+</ul>
+
+<p>I&rsquo;m hoping to better understand this project next week when I will continue working on this story.</p>
+
+<h3 id="how-can-i-be-better-next-week">How can I be better next week?</h3>
+
+<ul>
+<li>Actually do an exercise from the Grokking text book</li>
+<li>I want to dedicate more time to the AWS Certified Solutions Architect course next week.</li>
+</ul>
+
+<h3 id="what-am-i-looking-forward-to-next-week">What am I looking forward to next week?</h3>
+
+<p>Getting back into a routine after the last few weeks.</p>
+
+<p><br></p>
+
+<h4 id="listening">#listening</h4>
+
+<p><a href="https://www.youtube.com/watch?v=aySEzuNSN1k">Craig David - Wild Thoughts/Music Sounds Better With You</a></p>
+
+<h4 id="reading">#reading</h4>
+
+<p><a href="https://wwnorton.com/books/Delusions-of-Gender">Delusions of Gender</a></p>
+
+<h4 id="watching">#watching</h4>
+
+<p><a href="https://gamechangersmovie.com/the-film/">Gamechangers</a></p>
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="/tags/musings">musings</a></li>
+								
+								<li><a href="/tags/weeknotes">weeknotes</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div></div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © | 2019 </div>
+	</nav>
+</div>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-123-45', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script>feather.replace()</script>
+</body>
+</html>

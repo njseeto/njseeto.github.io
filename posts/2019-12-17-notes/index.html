@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Notes: 9th Dec - 15th Dec | seeto </title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Notes: 9th Dec - 15th Dec" />
+<meta property="og:description" content="Share the Knowledge" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://njseeto.github.io/posts/2019-12-17-notes/" />
+<meta property="article:published_time" content="2019-12-17T12:13:30+05:30" />
+<meta property="article:modified_time" content="2019-12-17T12:13:30+05:30" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Notes: 9th Dec - 15th Dec"/>
+<meta name="twitter:description" content="Share the Knowledge"/>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" media="screen" href="https://njseeto.github.io/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://njseeto.github.io/css/main.css" /><link rel="stylesheet" type="text/css" href="https://njseeto.github.io/css/dark.css" media="(prefers-color-scheme: dark)" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://njseeto.github.io/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="/">notes</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/njseeto" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/natalieseeto" title="Twitter"><i data-feather="twitter"></i></a><a href="https://linkedin.com/in/natalie-seeto/" title="Linkedin"><i data-feather="linkedin"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">Posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">Notes: 9th Dec - 15th Dec</h1>
+			<div class="meta">Posted at &mdash; Dec 17, 2019</div>
+		</div>
+
+		<div class="markdown">
+			
+
+<h3 id="tl-dr">TL, DR;</h3>
+
+<ul>
+<li>Work: Cassandra, Compliance, Connecting the dots</li>
+<li>Life: Climate</li>
+</ul>
+
+<h4 id="work-things">Work things:</h4>
+
+<ul>
+<li>Mocks and stubs.</li>
+<li>Chatted about our <a href="https://cassandra.apache.org/">Cassandra</a> database.</li>
+<li>GDPR (General Data Protection Regulation) and PECR (Privacy and Electronic Communications Regulations).</li>
+<li>Found out that sometimes you need to wait 24hrs after deleting an AWS S3 bucket before it is actually deleted from the console.</li>
+<li>We had a phantom alert, ie: an alert was going off even though the metrics and graphs all looked fine.
+
+<ul>
+<li><strong>What:</strong> The alert was for a percentage fail rate for one of our services. There was a blip in the graph signifying the failrate was 100% (not good) but after 10mins the graphs came back to normal. After about an hour of normal graphs, the alerts were still going off.</li>
+<li><strong>Reason:</strong> The check was using the new aggregated metrics in Graphite and dividing them (to get the percentage). This meant the 2 metrics that were used to get the percentage were not always coming in at the same time. So on occassion, the check would be dividing by nothing causing the alert to go off.</li>
+<li><strong>Fix:</strong> We added a timeShift of 2mins so the alert checks stable data from 2mins ago. Trade-off is the data we receive is a few minutes old but I&rsquo;d rather accurate data that is 2mins old than real time inaccurate data.</li>
+</ul></li>
+<li>We had a few new comers in the company so had an on-call knowledge transfer chat.</li>
+<li>I also had a chat to the SVP of Architecture to discuss what he thinks the future landscape of our architecture will look like and why.</li>
+<li>Had a super quick chat about what a good data pipeline should look like. This is what I gathered from the convo&hellip;</li>
+</ul>
+
+<p><img src="/images/basic_data_model.png" alt="basic_data_model" /></p>
+
+<h4 id="general-life-things">General life things:</h4>
+
+<ul>
+<li>Tried out <a href="https://www.myneighboursthedumplings.com/">My Neighbours the Dumplings</a>.</li>
+<li>Voted at the general election on Thursday.</li>
+<li>Went to a <a href="http://www.annieceleste.com/queerspace/">queer fitness class</a>.</li>
+</ul>
+
+<hr />
+
+<h3 id="message-of-the-week">Message of the week</h3>
+
+<p>Knowledge transfer is hard&hellip;</p>
+
+<h3 id="who-taught-me-something-or-really-made-me-think-this-week">Who taught me something or really made me think this week?</h3>
+
+<p>I was chatting to another engineer about certification and we got into the chat of AWS certification. She believes the practice of coding will be more about infrastructure and looking at the plumbing. I thoroughly enjoy the logical problems that come with building new features and how it will affect existing functionality so I&rsquo;m not sure how I feel about this prediction for the future of software engineering - seems a little bleak.</p>
+
+<h3 id="what-am-i-trying-to-work-out">What am I trying to work out?</h3>
+
+<p>What&rsquo;s the best way to knowledge transfer&hellip;</p>
+
+<p>We unfortunately have had a few resignations in our company, which means I will become one of two people left of the original team who maintained one of the company&rsquo;s main (monolithic) application.</p>
+
+<p>I am currently drawing up diagrams, writing up confluence and pairing as much as possible to share the knowledge but I wonder if there is anything else I can do to accelerate this.</p>
+
+<h3 id="how-can-i-be-better-next-week">How can I be better next week?</h3>
+
+<p>Being mindful of my carbon footprint. The <a href="https://www.un.org/en/climatechange/">Climate Change Conference</a> was held this week and given the horrific bushfires that are currently occurring back home, I have been thinking about ways I can be more climate conscious. I do small things like use reusable face wipes, walk / cycle to work, use a keep cup, say no to plastic straws etc, but I was thinking about ways to minimise food waste and came across <a href="https://en.wikipedia.org/wiki/Bokashi_(horticulture)">bokashi</a>.</p>
+
+<p>On a work front, challenge assumptions. I&rsquo;ve been at my company for 18 months now and have realised I just get on with the work (bad), it&rsquo;s become a little automatic. I want to be more deliberate in questioning stories, how a change could affect other parts of the business, is there a better way to do this? I often default to, people know more things than me so this story must&rsquo;ve been fleshed out properly and they must&rsquo;ve thought of x, y, z. But in reality, no one person could have all encompassing insight into the effects of a change.</p>
+
+<h3 id="what-am-i-looking-forward-to-next-week">What am I looking forward to next week?</h3>
+
+<p>Final work week for the year and finishing up our compliance work!</p>
+
+<p><br></p>
+
+<h4 id="listening">#listening</h4>
+
+<p><a href="https://www.abc.net.au/radio/programs/ladies-we-need-to-talk/bonus-the-concrete-ceiling/11780976">Ladies, We Need To Talk - The concrete ceiling</a></p>
+
+<h4 id="reading">#reading</h4>
+
+<p>I read this earlier in the month but want to share it here as it is an interesting read.</p>
+
+<p><a href="https://codecalendar.dev/2019/my-experience-of-data-engineering-vs-software-application-engineering/">My Experience of Data Engineering vs Software Engineering</a></p>
+
+<h4 id="watching">#watching</h4>
+
+<p><a href="https://www.netflix.com/browse?jbv=80198635&amp;jbp=0&amp;jbr=1">The Letdown</a></p>
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="/tags/musings">musings</a></li>
+								
+								<li><a href="/tags/weeknotes">weeknotes</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div></div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © | 2019 </div>
+	</nav>
+</div>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-123-45', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script>feather.replace()</script>
+</body>
+</html>
