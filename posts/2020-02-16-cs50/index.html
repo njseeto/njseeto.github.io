@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>CS50: Week One - C | seeto </title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="CS50: Week One - C" />
+<meta property="og:description" content="An overview of Week 1 of the CS50 course" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://njseeto.github.io/posts/2020-02-16-cs50/" />
+<meta property="article:published_time" content="2020-02-16T10:13:30+05:30" />
+<meta property="article:modified_time" content="2020-02-16T10:13:30+05:30" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="CS50: Week One - C"/>
+<meta name="twitter:description" content="An overview of Week 1 of the CS50 course"/>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" media="screen" href="https://njseeto.github.io/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://njseeto.github.io/css/main.css" /><link rel="stylesheet" type="text/css" href="https://njseeto.github.io/css/dark.css" media="(prefers-color-scheme: dark)" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://njseeto.github.io/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="/">notes</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/njseeto" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/natalieseeto" title="Twitter"><i data-feather="twitter"></i></a><a href="https://linkedin.com/in/natalie-seeto/" title="Linkedin"><i data-feather="linkedin"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">Posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">CS50: Week One - C</h1>
+			<div class="meta">Posted at &mdash; Feb 16, 2020</div>
+		</div>
+
+		<div class="markdown">
+			<p>
+Some notes from Week 1 of the CS50 course.
+</p>
+
+<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+box {
+  width: 300px;
+  border: 2px solid red;
+  padding: 8px;
+  margin: 10px;
+}
+</style>
+
+<p><h4>Data Types</h4>
+<table>
+  <tr>
+    <th>Data Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>int</code></td>
+    <td>Used to store integers.Since integers take up 4 bytes of memory (32 bits)</td>
+  </tr>
+  <tr>
+    <td><code>char</code></td>
+    <td>Stores single characters; takes up 1 byte. Single characters can be mapped along this range because of ASCII.</td>
+  </tr>
+  <tr>
+    <td><code>float</code></td>
+    <td>Store variables with decimal points(i.e., real numbers). Take up 4 bytes of information. Though we know a decimal point can be within the range of 2 billion, we are still limited to its precision because of the length of the decimal part cannot approach infinity</td>
+  </tr>
+  <tr>
+    <td><code>double</code></td>
+    <td>Also store real numbers, but instead take up 8 bytes of memory,therefore allowing for more precision for the decimal values.</td>
+  </tr>
+    <tr>
+    <td><code>long</code></td>
+    <td>Integers with more bits, so they can count higher than an <code>int</code></td>
+  </tr>
+  <tr>
+    <td><code>bool</code></td>
+    <td>Used for variables that will store a boolean value.  Capable of storing one of two values: true or false.</td>
+  </tr>
+  <tr>
+    <td><code>string</code></td>
+    <td>Used for variables that will store a series of characters, usually called byprogrammers as strings.  They can includewords, sentences, paragraphs, and the likes.</td>
+  </tr>
+</table></p>
+
+<p>To create a variable, give it a type and then give it a name. If you wish to create multiple variables of the same type, specify the type once, and then list as many variables.</p>
+
+<p>In general, it’s good practice to only declare variables when you need them. You don’t need to create all the variables in the beginning of your program.</p>
+
+<p><strong>Using a Variable</strong>
+<pre>int number;    // declaration</pre>
+<pre>number = 12;   // assignment</pre></p>
+
+<p>If you are simultaneously declaring and assigning (also known as <em>initialising</em>), you can consolidate into one step:
+<pre> int number = 12;  // initialisation </pre></p>
+
+<p><strong>Conditional Statements</strong>
+<pre>
+if (boolean-expression)
+{
+    // Do something
+}
+</pre></p>
+
+<p>If the <code>boolean-expression</code> is true, all code within the curly braces will run from top to bottom.</p>
+
+<p>If the expression is false, these lines will not execute.</p>
+
+<pre>
+if (boolean-expression)
+{
+    // Do something
+} else {
+    // Do something
+}
+</pre>
+
+<p>If the <code>boolean-expression</code> is true, all code within the curly braces will run from top to bottom.</p>
+
+<p>If the expression is false, the code in the second braces will execute.</p>
+
+<pre>
+if (boolean-expression)
+{
+    // first branch
+}
+if (boolean-expression)
+{
+    // second branch
+}
+if (boolean-expression)
+{
+    // third branch
+} else {
+    // fourth branch
+}
+</pre>
+
+<p>You can create a chain of non-mutually exclusive statements. In this example, the third and fourth branches are mutually exculsive (the else binds to the closest if).</p>
+
+<p><br></p>
+
+<p><strong>Loops</strong></p>
+
+<p>Loops allow your programs to execute lines of code repeatedly, saving you from needing to copy and paste or otherwise repeat lines of code.</p>
+
+<pre>
+while (boolean-expression)
+{
+    // Do something
+}
+</pre>
+
+<p>If this is true the code will run <em>repeatedly</em> from top to bottom until the boolean-expression evaluates to false.</p>
+
+<pre>
+do 
+{
+    // Do something
+} while (boolean-expression)
+</pre>
+This executes all lines of code within the curly braces, and then if the boolean-expression is true will go back and repeat the process until the boolean-expression is false.
+
+
+<pre>
+for (int i = 0; i < 10; i++)
+{
+    // Do something
+}
+</pre>
+
+<p>For loops are used to repeat the body of the code a certain number of times, in this example 10 times. The parts of a for loop are:</p>
+
+<ul>
+<li>A counter variable (here <code>i</code> is set).</li>
+<li>A boolean expression (<code>i &lt; 10</code>) if this is true the code will run. If it is false it will stop.</li>
+<li>The counter variable is incremented (<code>i++</code>).</li>
+</ul>
+
+<p><strong>Loops Summary</strong>
+<table>
+  <tr>
+    <th>Type</th>
+    <th>When to Use</th>
+  </tr>
+  <tr>
+    <td><code>while</code></td>
+    <td>Use when you want a loop to repeat for an unknown number of times or possibly not at all</td>
+  </tr>
+  <tr>
+    <td><code>do-while</code></td>
+    <td>Use when you want a loop to repeat for an unknown number of times but at least once</td>
+  </tr>
+    <tr>
+    <td><code>for</code></td>
+    <td>Use when you want a loop to repeat a discrete amount of times</td>
+  </tr>
+</table>
+<br></p>
+
+<p><strong>Boolean Expressions</strong></p>
+
+<p>Relational Operators:</p>
+
+<pre>
+x < y       // less than
+x <= y      // less than or equal to 
+x > y       // greater than
+x >= y      // greater than or equal to 
+x == y      // equality
+x != y      // inequality
+</pre>
+
+<p><strong>Designing with Abstraction</strong></p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">int main(void)
+{
+    printf(&#34;cough\n&#34;);
+    printf(&#34;cough\n&#34;);
+    printf(&#34;cough\n&#34;);
+}
+
+    // a little better design
+int main(void)
+{
+    for (int i = 0; i &lt; 3; i++)
+    {
+        printf(&#34;cough\n&#34;);
+    }
+}</pre></div>
+<p>The below exapmple uses <em>abstraction</em>:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">void cough(void);
+
+int main(void)
+{
+    for (int i = 0; i &lt; 3; i++)
+    {
+        cough();
+    }
+}
+
+    // Cough once
+void cough(void)
+{
+    printf(&#34;cough\n&#34;);
+}</pre></div>
+<p>Note how the <code>cough</code> function has been abstracted out of the main function.</p>
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="/tags/cs50">cs50</a></li>
+								
+								<li><a href="/tags/study-notes">study-notes</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div></div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © | 2019 </div>
+	</nav>
+</div>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-123-45', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script>feather.replace()</script>
+</body>
+</html>

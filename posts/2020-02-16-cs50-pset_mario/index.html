@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>CS50: Week One - Problem Set: Mario | seeto </title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="CS50: Week One - Problem Set: Mario" />
+<meta property="og:description" content="A solution and walkthrough for the Mario problem set" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://njseeto.github.io/posts/2020-02-16-cs50-pset_mario/" />
+<meta property="article:published_time" content="2020-02-16T10:13:30+05:30" />
+<meta property="article:modified_time" content="2020-02-16T10:13:30+05:30" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="CS50: Week One - Problem Set: Mario"/>
+<meta name="twitter:description" content="A solution and walkthrough for the Mario problem set"/>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" media="screen" href="https://njseeto.github.io/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://njseeto.github.io/css/main.css" /><link rel="stylesheet" type="text/css" href="https://njseeto.github.io/css/dark.css" media="(prefers-color-scheme: dark)" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://njseeto.github.io/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="/">notes</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/njseeto" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/natalieseeto" title="Twitter"><i data-feather="twitter"></i></a><a href="https://linkedin.com/in/natalie-seeto/" title="Linkedin"><i data-feather="linkedin"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">Posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">CS50: Week One - Problem Set: Mario</h1>
+			<div class="meta">Posted at &mdash; Feb 16, 2020</div>
+		</div>
+
+		<div class="markdown">
+			
+
+<p>
+This problem set comes in two levels, more comfortable and less comfortable. I will run through both problems and my thought process for them in this post.
+</p>
+
+<h3 id="problem-set-1-mario-more-comfortable">Problem Set 1 - Mario (more comfortable)</h3>
+
+<p>Create a pyramid in C, albeit in text, using hashes (#) for bricks, a la the below. Each hash is a bit taller than it is wide, so the pyramid itself is also be taller than it is wide.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">       #
+      ##
+     ###
+    ####
+   #####
+  ######
+ #######
+########</pre></div>
+<p>The program we’ll write will be called mario. And let’s allow the user to decide just how tall the pyramid should be by first prompting them for a positive integer between, say, 1 and 8, inclusive.</p>
+
+<p>Here’s how the program might work if the user inputs 8 when prompted:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">$ ./mario
+Height: 8
+
+       #
+      ##
+     ###
+    ####
+   #####
+  ######
+ #######
+########</pre></div>
+<p>Here’s how the program might work if the user inputs 4 when prompted:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">$ ./mario
+Height: 4
+   #
+  ##
+ ###
+####</pre></div>
+<p>If the user doesn’t, in fact, input a positive integer between 1 and 8, inclusive, when prompted, the program should re-prompt the user until they cooperate:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">$ ./mario
+Height: -1
+Height: 0
+Height: 42
+Height: 50
+Height: 4
+
+   #
+  ##
+ ###
+####</pre></div>
+<p><br></p>
+
+<h2 id="my-thoughts-breaking-down-the-problem">My thoughts breaking down the problem</h2>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">   #
+  ##
+ ###
+####</pre></div>
+<p>For the above pyramid:</p>
+
+<ul>
+<li>We need 4 lines</li>
+<li>Each line has 4 characters, either a # or a space</li>
+<li>From top to bottom, the number of spaces decrease and the the number of hashes increase</li>
+</ul>
+
+<p>So to type it out for each line:</p>
+
+<ul>
+<li>The first line we need, 4-1=3 spaces and 1 hash.</li>
+<li>The second line we need, 4-2=2 spaces and 2 hashes.</li>
+<li>The third line we need, 4-3=1 spaces and 3 hashes.</li>
+<li>The fourth line we need, 4-4=0 spaces and 4 hashes.</li>
+</ul>
+
+<p>&hellip;Now we’re seeing a pattern.</p>
+
+<p>If we look at using a loop, we’ll need:</p>
+
+<ul>
+<li>4-0-1=3, 0+1=1</li>
+<li>3-0-1=2, 1+1=2</li>
+<li>2-0-1=1, 2+1=3</li>
+<li>1-0-1=0, 3+1=4</li>
+</ul>
+
+<p>So for a pyramid of size n:</p>
+
+<ul>
+<li>(n-1)-0=(n-1), 0+1=1</li>
+
+<li><p>(n-1)-1=(n-2), 1+1=2
+&hellip;&hellip;</p></li>
+
+<li><p>The last line will be: (n-1)-(n-1)=0, (n-1)+1=n</p></li>
+</ul>
+
+<p><h3>Solution</h3>
+First make sure the user can input a number between 1-8 inclusive.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">int main(void) {
+int height;
+
+ do {
+   height = get_int(&#34;Height: \n&#34;);
+ }
+ while ( height &lt; 1 || height &gt; 8);
+
+}</pre></div>
+<p>Once that is done we can think about adding the hashes. It is easier to add make a left aligned pyramid:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">int main(void) {
+int height;
+
+ do {
+   height = get_int(&#34;Height: \n&#34;);
+ }
+ while( height &lt; 1 || height &gt; 8);
+
+    // use a loop to add the #
+for(int i=0; i &lt; height; i++){
+   for(int j=0; j&lt; i +1 ; j++){
+       printf(&#34;#&#34;);
+   }
+   printf(&#34;\n&#34;);
+}
+}
+
+// Output for 3
+#
+##
+###</pre></div>
+<p>Great! Now we need to get those hashes to the right side, best way to visualise this is to use &lsquo;.&rsquo;</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">int main(void) {
+int height;
+
+ do {
+   height = get_int(&#34;Height: \n&#34;);
+ }
+ while( height &lt; 1 || height &gt; 8);
+
+for(int i=0; i &lt; height; i++){
+       
+       // use a loop to add . according to the height (user&#39;s input) 
+   for(int j=0; j &lt; height-1-i ; j++){
+       printf(&#34;.&#34;);
+       }
+
+        // use a loop to add the #
+   for(int j=0; j&lt; i + 1 ; j++){
+       printf(&#34;#&#34;);
+       }
+  
+   printf(&#34;\n&#34;);
+}
+}
+
+// OUTPUT for 3
+..#
+.##
+###</pre></div>
+<p>Now all we need to do is replace the &lsquo;.&rsquo; with a &lsquo; &lsquo;</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">int main(void) {
+int height;
+
+ do {
+   height = get_int(&#34;Height: \n&#34;);
+ }
+ while( height &lt; 1 || height &gt; 8);
+
+for(int i=0; i &lt; height; i++){
+   for(int j=0; j &lt; height-1-i ; j++){
+       printf(&#34; &#34;);
+       }
+
+        // use a loop to add the #
+   for(int j=0; j&lt; i + 1 ; j++){
+       printf(&#34;#&#34;);
+       }
+  
+   printf(&#34;\n&#34;);
+}
+}
+
+// OUTPUT for 3
+  #
+ ##
+###</pre></div>
+<p>Tada! That&rsquo;s it! Mario (more comfortable done).
+Note: I think we can definitely make this more readable. Those for loops are a little hard to read, we could take them out (abstraction) probalby take them out as an improvement.</p>
+
+<p><br></p>
+
+<h2 id="problem-set-1-mario-less-comfortable">Problem Set 1: Mario - less comfortable</h2>
+
+<p>The slightly more difficult version of mario is to make a pyramid that looks like this.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">$ ./mario
+Height: 8
+       #  #
+      ##  ##
+     ###  ###
+    ####  ####
+   #####  #####
+  ######  ######
+ #######  #######
+########  ########</pre></div>
+<h3 id="my-thoughts">My thoughts</h3>
+
+<p>Since we have the harder bit out of the way, we just need to add two spaces in the middle and a right aligned pyramid (ie: no spaces).</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">int main(void)
+{
+   int height;
+
+   do
+   {
+       height = get_int(&#34;Height: \n&#34;);
+   }
+   while (height &lt; 1 || height &gt; 8);
+
+   for (int i = 0; i &lt; height; i++)
+   {
+       for (int j = 0; j &lt; height - 1 - i ; j++)
+       {
+           printf(&#34; &#34;);
+       }
+       
+       for (int j = 0; j &lt; i + 1 ; j++)
+       {
+           printf(&#34;#&#34;);
+       }
+    
+    // add the middle space
+       printf(&#34;  &#34;);
+       
+       for (int j = 0; j &lt; i + 1 ; j++)
+       {
+        // add the hash on the right pyramid
+           printf(&#34;#&#34;); 
+       }
+        printf(&#34;\n&#34;);
+   }
+}
+
+
+// OUTPUT
+
+$ ./mario
+Height: 5
+
+    #  #
+   ##  ##
+  ###  ###
+ ####  ####
+#####  #####</pre></div>
+		</div>
+
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="/tags/cs50">cs50</a></li>
+								
+								<li><a href="/tags/study-notes">study-notes</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div></div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © | 2019 </div>
+	</nav>
+</div>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-123-45', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script>feather.replace()</script>
+</body>
+</html>
