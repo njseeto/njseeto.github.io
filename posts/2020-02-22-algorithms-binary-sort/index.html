@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Algorithms: Binary Sort | seeto </title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Algorithms: Binary Sort" />
+<meta property="og:description" content="A better way to search" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://njseeto.github.io/posts/2020-02-22-algorithms-binary-sort/" />
+<meta property="article:published_time" content="2020-02-22T10:13:30+05:30" />
+<meta property="article:modified_time" content="2020-02-22T10:13:30+05:30" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Algorithms: Binary Sort"/>
+<meta name="twitter:description" content="A better way to search"/>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" media="screen" href="https://njseeto.github.io/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://njseeto.github.io/css/main.css" /><link rel="stylesheet" type="text/css" href="https://njseeto.github.io/css/dark.css" media="(prefers-color-scheme: dark)" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://njseeto.github.io/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="/">notes</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/njseeto" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/natalieseeto" title="Twitter"><i data-feather="twitter"></i></a><a href="https://linkedin.com/in/natalie-seeto/" title="Linkedin"><i data-feather="linkedin"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">Posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">Algorithms: Binary Sort</h1>
+			<div class="meta">Posted at &mdash; Feb 22, 2020</div>
+		</div>
+
+		<div class="markdown">
+			
+
+<p>This is part of the Algorithms series that I have decided to write up as a result of reading <a href="https://www.manning.com/books/grokking-algorithms">Grokking Algorithms</a> book.</p>
+
+<h4 id="tl-dr">TL; DR</h4>
+
+<ul>
+<li>Binary search eliminates half the remaining values every time.</li>
+<li>Binary search only works if the list is sorted.</li>
+<li>Algorithm speed isn&rsquo;t measured in seconds but in the <strong>growth</strong> of the number of operations.</li>
+<li>We talk about how quickly the run of the algorithm increases as the size of the input increases.</li>
+<li>Run time of algorithms is expressed in Big O notation.</li>
+<li>Binary search will take log<sub>2</sub>n steps to run in the worst case - That is it runs in logarithmic time ie: <strong>O(log n)</strong>.</li>
+<li>A time of O(n) is known as <em>linear time</em>.</li>
+<li>O(log n) is faster than O(n) and gets even faster as the input grows bigger.</li>
+</ul>
+
+<p><br></p>
+
+<hr />
+
+<h3 id="binary-search">Binary Search</h3>
+
+<p>Imagine you were asked to guess a number between 1 and 100. You could go through each number from 1 to 100 (this is called Simple Search). But it would take a maximum of 100 guesses to get the correct answer.</p>
+
+<blockquote>
+<h5>Jessie: Ok I’m thinking of a number between 1 and 100…
+<br>
+Jo: Is it 1?
+<br>
+Jessie: No, higher.
+<br>
+Jo: Is it 2?
+<br>
+Jessie: Higher…
+<br>
+Jo: 3?
+</h5>
+</blockquote>
+
+<p>… You get the point.</p>
+
+<p>A quicker way to do this would be to guess the middle number, in this example 50. That way the other person can tell you if you’ve gone too low or too high, eliminating half the numbers. If you guess 25, you’ll again eliminate half - are we seeing a pattern here?</p>
+
+<p>This is binary search in a nutshell.</p>
+
+<blockquote>
+<p>You guess the middle number and eliminate half the remaining every time.</p>
+</blockquote>
+
+<p>With the example of guessing a number between 1 and 100, the maximum guesses you’d have to make using a binary search method is <strong>7</strong>.</p>
+
+<p>Count them&hellip;</p>
+
+<p>100 → 50 → 25 → 13 → 7 → 4 → 2 → 1</p>
+
+<p>Far more efficient than simple search, which was a maximum of 100.</p>
+
+<p>So how do we compare the efficiency between algorithms?</p>
+
+<p><em>Enter Big O notation.</em></p>
+
+<h3 id="big-o-notation">Big O Notation</h3>
+
+<p>Each algorithm has a run time, which is the time it takes to complete a task.</p>
+
+<p>Big O is based on the maximum number of operations required to complete a task, aka <em>the worst case scenario</em>.</p>
+
+<p>The maximum guesses required for a simple search is the same as the size of the input. That is if the input is 100, then the maximum number of guesses will be 100.</p>
+
+<p>This is known as <strong>linear time</strong>. Or in Big O, <strong>O(n)</strong></p>
+
+<p>With binary search <em>the maximum amount of guesses is the logarithm of the input</em>.</p>
+
+<p>That is:</p>
+
+<blockquote>
+<p>log<sub>2</sub>(8) = 3</p>
+
+<p>2<sup>3</sup> = 8</p>
+</blockquote>
+
+<p>This means an input of 8 will take a maximum of 3 guesses to arrive at the correct answer.</p>
+
+<p>8 → 4 → 2 → 1.</p>
+
+<p>This is known as <em>logarithmic time</em>.</p>
+
+<p>That is, <strong>O(log n)</strong> in Big O notation.</p>
+
+<p>Let&rsquo;s compare the running time for simple search vs binary search.</p>
+
+<table>
+  <tr>
+    <th>Simple Search</th>
+    <th>Binary Search</th>
+  </tr>
+  <tr>
+    <td>100 items → 100 guesses</td>
+    <td>100 items → 7 guesses</td>
+  </tr>
+  <tr>
+    <td>4,000,000,000 items → 4,000,000,000 guesses</td>
+    <td>4,000,000,000 items → 32 guesses</td>
+  </tr>
+  <tr>
+    <td>O(n) - LINEAR TIME</td>
+    <td>O(log n) - LOGARITHMIC TIME</td>
+  </tr>
+</table>
+
+<h5>Note: the O in Big O is literally just an O. It means nothing!</h5>
+
+<p><br></p>
+
+<h3 id="common-big-o-runtimes-from-fastest-to-slowest">Common Big O Runtimes (From fastest to slowest)</h3>
+
+<table>
+  <tr>
+    <th>Run time</th>
+    <th>Example</th>
+  </tr>
+  <tr>
+    <td>O(log n) aka LOG TIME</td>
+    <td>Binary Search</td>
+  </tr>
+  <tr>
+    <td>O(n) aka LINEAR TIME</td>
+    <td>Simple search</td>
+  </tr>
+  <tr>
+    <td>O(n * log n)</td>
+    <td>A fast sorting algorithm, like quick sort</td>
+  </tr>
+    <tr>
+    <td>O(n<sup>2</sup>)</td>
+    <td>A slow sorting algorithm, like selection sort</td>
+  </tr>
+    <tr>
+    <td>O(n!)</td>
+    <td>A really slow algorithm, like the traveling salesperson</td>
+  </tr>
+</table>
+
+<p><br></p>
+
+<h4 id="remember">Remember:</h4>
+
+<ul>
+<li>Algorithm speed isn&rsquo;t measured in seconds but in the <strong>growth</strong> of the number of operations.</li>
+<li>We talk about how quickly the run of the algorithm increases as the size of the input increases.</li>
+<li>Run time of algorithms is expressed in Big O notation.</li>
+<li>O(log n) is faster than O(n) and gets even faster as the input grows bigger.</li>
+</ul>
+
+<hr />
+
+<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+box {
+  width: 300px;
+  border: 2px solid red;
+  padding: 8px;
+  margin: 10px;
+}
+</style>
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="/tags/algorithms">algorithms</a></li>
+								
+								<li><a href="/tags/binary-sort">binary-sort</a></li>
+								
+								<li><a href="/tags/big-o">big-o</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div></div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © | 2019 </div>
+	</nav>
+</div>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-123-45', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script>feather.replace()</script>
+</body>
+</html>

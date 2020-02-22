@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>big-o on notes</title>
+    <link>https://njseeto.github.io/tags/big-o/</link>
+    <description>Recent content in big-o on notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <copyright>©</copyright>
+    <lastBuildDate>Sat, 22 Feb 2020 10:13:30 +0530</lastBuildDate>
+    
+	<atom:link href="https://njseeto.github.io/tags/big-o/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Algorithms: Binary Sort</title>
+      <link>https://njseeto.github.io/posts/2020-02-22-algorithms-binary-sort/</link>
+      <pubDate>Sat, 22 Feb 2020 10:13:30 +0530</pubDate>
+      
+      <guid>https://njseeto.github.io/posts/2020-02-22-algorithms-binary-sort/</guid>
+      <description>This is part of the Algorithms series that I have decided to write up as a result of reading Grokking Algorithms book.
+TL; DR  Binary search eliminates half the remaining values every time. Binary search only works if the list is sorted. Algorithm speed isn&amp;rsquo;t measured in seconds but in the growth of the number of operations. We talk about how quickly the run of the algorithm increases as the size of the input increases.</description>
+    </item>
+    
+  </channel>
+</rss>
