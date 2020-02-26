@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>general on notes</title>
+    <link>https://njseeto.github.io/tags/general/</link>
+    <description>Recent content in general on notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <copyright>©</copyright>
+    <lastBuildDate>Wed, 26 Feb 2020 10:13:30 +0530</lastBuildDate>
+    
+	<atom:link href="https://njseeto.github.io/tags/general/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>The Library</title>
+      <link>https://njseeto.github.io/posts/2020-02-26-useful-links/</link>
+      <pubDate>Wed, 26 Feb 2020 10:13:30 +0530</pubDate>
+      
+      <guid>https://njseeto.github.io/posts/2020-02-26-useful-links/</guid>
+      <description>A collection of mostly technical resources. This list will continue to grow as I find more useful resources.
+Git  Oh Shit, Git?!?  Microservices  📖 Building Microservices 🎥 Design Microservices the Right Way 🎥 Mastering Chaos - A Netflix Guide to Microservices  Shell Scripts  13 Tips &amp;amp; Tricks for Writing Shell Scripts Advanced Bash Scripting Guide Bash Scripting Cheatsheet  Algorithms  📖 Grokking Algorithms Big O Cheatsheet  Computer Science  40 Key Computer Science Concepts Explained in Laymans Terms  Coding Practice Sites  Codewars HackerRank LeetCode  Need Further Info  Dev.</description>
+    </item>
+    
+  </channel>
+</rss>
